@@ -213,7 +213,11 @@ document.querySelectorAll("input, select").forEach(el => {
 });
 
 calcular();
-</script>
 
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js");
+}
+</script>
 </body>
 </html>
