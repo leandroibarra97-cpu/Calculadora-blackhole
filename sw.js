@@ -1,1 +1,17 @@
-hola
+self.addEventListener("install", e => {
+  e.waitUntil(
+    caches.open("calculadora-cache").then(cache => {
+      return cache.addAll([
+        "/Blackhole-page/calculadora.html"
+      ]);
+    })
+  );
+});
+
+self.addEventListener("fetch", e => {
+  e.respondWith(
+    caches.match(e.request).then(response => {
+      return response || fetch(e.request);
+    })
+  );
+});
