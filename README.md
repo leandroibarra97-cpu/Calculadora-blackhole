@@ -79,7 +79,8 @@ button:hover {
 }
 </style>
 
-</head>
+</head><link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f172a">
 
 <body>
 
